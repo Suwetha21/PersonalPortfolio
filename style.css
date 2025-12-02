@@ -264,7 +264,7 @@ h2::after, .section-title::after {
 
 .skill-card img {
     max-width: 60px;
-    max-height: 60px;
+    max-height: 80px;
     height: auto;
     object-fit: contain;
     margin-bottom: 5px;
