@@ -1,0 +1,754 @@
+:root {
+    --primary-color: #19e445;
+    --secondary-color: #f3e9e7;
+    --dark-bg: #1a1a1a;
+    --grey-text: #f0f3f5;
+}
+
+body {
+    /* Assuming you have a backg.avif file */
+    background-image: url('./backg.avif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    /* Using a lighter shade of green for hover */
+    color: #66bb6a; 
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+h2::after, .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+}
+
+.accent-color {
+    color: var(--primary-color);
+}
+
+.section {
+    padding: 80px 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.section-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- NAVBAR STYLES --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 26, 26, 0.95);
+    color: var(--secondary-color);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(74, 189, 79, 0.1);
+}
+
+.navbar .section-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.nav-links a {
+    margin-left: 25px;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 3px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 100px 5% 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.profile-pic-container {
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.greeting {
+    color: var(--grey-text);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.role-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.summary-text {
+    font-size: 1.05rem;
+    color: var(--grey-text);
+    margin-bottom: 30px;
+    max-width: 650px;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cta-button.primary {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+.cta-button.primary:hover {
+    background-color: #66bb6a;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    transform: translateY(-2px);
+}
+
+/* --- SKILLS SECTION --- */
+.skill-category {
+    margin-bottom: 50px;
+    border-top: 1px solid rgba(76, 175, 80, 0.2);
+    padding-top: 30px;
+}
+
+.skill-category:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+
+.skill-category h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.skill-category h3 i {
+    margin-right: 10px;
+}
+
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(30, 30, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover {
+    background-color: rgba(40, 40, 50, 0.8);
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: translateY(-5px);
+}
+
+
+.skill-card img {
+    max-width: 60px;
+    max-height: 60px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    color: var(--grey-text);
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+/* --- EDUCATION SECTION --- */
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.education-item {
+    padding: 20px;
+    background-color: rgba(30, 30, 40, 0.6);
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.school-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.details {
+    color: var(--grey-text);
+    font-size: 0.95rem;
+}
+
+/* --- CERTIFICATIONS SECTION --- */
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.certification-item {
+    flex: 1 1 300px;
+    padding: 20px;
+    background-color: rgba(30, 30, 40, 0.6);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.certification-item img {
+    /* Adjusted sizing for visual consistency */
+    width: 50px; 
+    height: 50px;
+    max-width: 80px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.project-item {
+    padding: 30px;
+    background-color: rgba(30, 30, 40, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-top: 3px solid var(--primary-color);
+}
+
+.project-item h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    color: var(--grey-text);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.project-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.project-item li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+    color: var(--secondary-color);
+}
+
+/* Using Font Awesome 5 for checkmark. You need to ensure FA is linked in your HTML */
+.project-item li::before { 
+    content: "\f058"; 
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    top: 3px;
+}
+
+
+.project-links {
+    margin-top: 15px;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.github-link i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* OVERRIDE: Borderless Secondary Button for Projects */
+.github-link.cta-button.secondary {
+    border: none !important;
+    background-color: transparent !important;
+    padding: 12px 0;
+    color: var(--primary-color);
+}
+
+.github-link.cta-button.secondary:hover {
+    background-color: rgba(25, 228, 69, 0.05);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --- CONTACT SECTION --- */
+.cta-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: rgba(30, 30, 40, 0.6);
+    color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-card span {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact-card:hover {
+    background-color: rgba(40, 40, 50, 0.8);
+    transform: translateY(-5px);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--dark-bg);
+    border-top: 1px solid rgba(74, 189, 79, 0.1);
+    font-size: 0.9rem;
+    color: var(--grey-text);
+}
+
+
+/* ======================================= */
+/* ====== INTERNSHIP/EXPERIENCE SECTION (FIXED FOR MOBILE/DESKTOP) ====== */
+/* ======================================= */
+
+/* Timeline Container (Left-Aligned Single Column on All Views) */
+.internship-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Timeline Line (Always 20px from the left) */
+.internship-timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Line position */
+    margin-left: -1px;
+    z-index: 1;
+}
+
+/* Timeline Item: Full width on all views, starting right of the line */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    /* Space for the dot and line on the left */
+    padding: 10px 40px; 
+    left: 0; 
+}
+
+/* Timeline Dot (Always positioned on the line) */
+.timeline-dot {
+    height: 14px;
+    width: 14px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 2;
+    border: 3px solid var(--dark-bg);
+    /* Aligns dot's center on the 20px line */
+    left: 14px !important; 
+    right: auto !important; 
+}
+
+/* Content box styling */
+.timeline-content {
+    background-color: rgba(30, 30, 40, 0.6);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Push content over to the right of the dot */
+    margin-left: 40px; 
+    /* Remove any border-left that was used for mobile-only look, rely on margin */
+    border-left: none; 
+}
+
+/* General text styling */
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.timeline-content h4 {
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: var(--grey-text);
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.timeline-content p, .timeline-content li {
+    color: var(--secondary-color);
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.timeline-content li {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    color: var(--grey-text);
+}
+
+.timeline-content li .fa-check-circle {
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.9em;
+}
+
+/* Resetting all alternating logic to ensure single column layout is consistent */
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+    left: 0;
+    padding-left: 60px; /* Space for line/dot in content padding */
+    padding-right: 15px;
+}
+.timeline-item:nth-child(odd) .timeline-dot,
+.timeline-item:nth-child(even) .timeline-dot {
+    left: 14px !important;
+    right: auto !important;
+}
+.timeline-item:nth-child(odd) .timeline-content,
+.timeline-item:nth-child(even) .timeline-content {
+     margin-left: 0; /* Remove margin in the new padding system */
+     border-left: 4px solid var(--primary-color); /* Add a visual border instead of margin */
+}
+
+
+/* --- MOBILE RESPONSIVENESS (<850px) --- */
+@media (max-width: 850px) {
+    
+    /* Navbar fix: Ensure logo and menu button are on one line */
+    .navbar .section-inner {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-bg);
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        border-top: 1px solid rgba(74, 189, 79, 0.2);
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+    
+    .nav-links a {
+        display: block;
+        margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero section */
+    .hero {
+        padding-top: 100px; /* Reduced padding-top after navbar fix */
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 0;
+    }
+    
+    .profile-pic-container {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    /* Projects section */
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact section */
+    .contact-links {
+        gap: 20px;
+    }
+
+    /* Timeline Adjustments for smaller screen - Already consistent, just clean up */
+    .internship-timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        /* Adjusted padding to push content right of the dot */
+        padding-left: 60px;
+        padding-right: 15px;
+        left: 0 !important;
+    }
+    
+    .timeline-dot {
+        left: 14px !important;
+    }
+    
+    .timeline-content {
+        margin-left: 0; /* Ensures content box uses full width inside padding */
+    }
+}
+
+/* --- SMALL MOBILE RESPONSIVENESS (<500px) --- */
+@media (max-width: 500px) {
+    .section {
+        padding: 50px 0;
+    }
+    
+    h2, .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+    }
+    
+    .skill-card {
+        width: 90px;
+        height: 90px;
+        padding: 8px;
+    }
+    
+    .skill-card img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+    
+    .skill-card p {
+        font-size: 0.75rem;
+    }
+
+    .contact-card {
+        width: 100px;
+    }
+
+    /* Ensure timeline remains clean on very small screens */
+    .timeline-item {
+        padding-left: 60px;
+        padding-right: 10px;
+    }
+}
+
+/* --- HAMBURGER MENU STYLES --- */
+.hamburger-menu {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+
+.hamburger-menu.active i::before {
+    content: "\f00d"; /* Close icon - ensure Font Awesome is loaded */
+}
