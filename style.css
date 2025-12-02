@@ -506,10 +506,12 @@ footer {
 .timeline-item {
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
-    /* Space for the dot and line on the left */
-    padding: 10px 40px; 
-    left: 0; 
+    margin-bottom: 32px;
+    padding: 0 0 0 60px; /* Consistent left padding for dot/line */
+    left: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
 }
 
 /* Timeline Dot (Always positioned on the line) */
@@ -518,25 +520,24 @@ footer {
     width: 14px;
     background-color: var(--primary-color);
     position: absolute;
-    top: 20px;
+    top: 24px;
     border-radius: 50%;
     z-index: 2;
     border: 3px solid var(--dark-bg);
-    /* Aligns dot's center on the 20px line */
-    left: 14px !important; 
-    right: auto !important; 
+    left: 14px !important;
+    right: auto !important;
 }
 
 /* Content box styling */
 .timeline-content {
     background-color: rgba(30, 30, 40, 0.6);
-    padding: 20px;
+    padding: 20px 18px 20px 18px;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* Push content over to the right of the dot */
-    margin-left: 40px; 
-    /* Remove any border-left that was used for mobile-only look, rely on margin */
-    border-left: none; 
+    margin-left: 0;
+    border-left: 4px solid var(--primary-color);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* General text styling */
@@ -588,8 +589,8 @@ footer {
 .timeline-item:nth-child(odd),
 .timeline-item:nth-child(even) {
     left: 0;
-    padding-left: 60px; /* Space for line/dot in content padding */
-    padding-right: 15px;
+    padding-left: 60px;
+    padding-right: 0;
 }
 .timeline-item:nth-child(odd) .timeline-dot,
 .timeline-item:nth-child(even) .timeline-dot {
@@ -598,8 +599,8 @@ footer {
 }
 .timeline-item:nth-child(odd) .timeline-content,
 .timeline-item:nth-child(even) .timeline-content {
-     margin-left: 0; /* Remove margin in the new padding system */
-     border-left: 4px solid var(--primary-color); /* Add a visual border instead of margin */
+    margin-left: 0;
+    border-left: 4px solid var(--primary-color);
 }
 
 
@@ -678,18 +679,21 @@ footer {
 
     .timeline-item {
         width: 100%;
-        /* Adjusted padding to push content right of the dot */
         padding-left: 60px;
-        padding-right: 15px;
+        padding-right: 0;
         left: 0 !important;
+        margin-bottom: 32px;
+        display: flex;
+        align-items: flex-start;
     }
-    
     .timeline-dot {
         left: 14px !important;
     }
-    
     .timeline-content {
-        margin-left: 0; /* Ensures content box uses full width inside padding */
+        margin-left: 0;
+        width: 100%;
+        padding: 18px 10px 18px 10px;
+        border-left: 4px solid var(--primary-color);
     }
 }
 
@@ -731,10 +735,14 @@ footer {
         width: 100px;
     }
 
-    /* Ensure timeline remains clean on very small screens */
+    /* Ensure timeline remains clean and equally spaced on very small screens */
     .timeline-item {
         padding-left: 60px;
-        padding-right: 10px;
+        padding-right: 0;
+        margin-bottom: 28px;
+    }
+    .timeline-content {
+        padding: 14px 4px 14px 8px;
     }
 }
 
